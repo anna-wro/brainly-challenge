@@ -10,7 +10,12 @@ const answer1 = document.getElementById("js-answer-1");
 const answer2 = document.getElementById("js-answer-2");
 const answer3 = document.getElementById("js-answer-3");
 const answer4 = document.getElementById("js-answer-4");
+const radio1 = document.getElementById("js-radio-1");
+const radio2 = document.getElementById("js-radio-2");
+const radio3 = document.getElementById("js-radio-3");
+const radio4 = document.getElementById("js-radio-4");
 let data, counter, time_minutes;
+let choices = [];
 let index = 0;
 
 (() => {
@@ -54,10 +59,12 @@ To jak, zaczynamy?`;
 
   // Previous/next buttons
   prevButton.addEventListener('click', () => {
+    saveAnswer();
     index--;
     loadQuestion();
   })
   nextButton.addEventListener('click', () => {
+    saveAnswer();
     index++;
     loadQuestion();
   })
@@ -68,13 +75,28 @@ To jak, zaczynamy?`;
     loadQuestion();
   }
 
+  function saveAnswer() {
+
+      if(radio1.checked){
+        choices[index] = 0;
+      } else if(radio2.checked) {
+        choices[index] = 1;
+      } else if(radio3.checked) {
+        choices[index] = 2;
+      } else if(radio4.checked) {
+        choices[index] = 3;
+      } else {
+        choices[index] = -1; // user didn't answer
+      }
+  }
+
   function loadQuestion() {
     index < 1 ? prevButton.style.visibility = 'hidden' : prevButton.style.visibility = 'visible';
+    index > 7 ? nextButton.style.visibility = 'hidden' : nextButton.style.visibility = 'visible';
     question.textContent = data.questions[index].question;
     answer1.textContent = data.questions[index].answers[0].answer;
     answer2.textContent = data.questions[index].answers[1].answer;
     answer3.textContent = data.questions[index].answers[2].answer;
     answer4.textContent = data.questions[index].answers[3].answer;
-
   }
 })();

@@ -49,10 +49,13 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
-  max-width: 960px; }
+  max-width: 800px; }
 
 .sg-text--info {
   padding-bottom: 20px; }
+
+.container__button {
+  margin-top: 5%; }
 
 .sg-content-box--heading {
   margin: 10% auto 5%; }
