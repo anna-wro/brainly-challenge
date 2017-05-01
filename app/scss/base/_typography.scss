@@ -1,2 +1,17 @@
 // Typography
 @import '../helpers/index';
+
+h1 {
+  text-align: center;
+}
+
+::selection {
+  background: $mintPrimary;
+  color: $white;
+}
+
+::-moz-selection {
+  background: $mintPrimary;
+  color: $white;
+}
+

@@ -64,7 +64,9 @@ gulp.task('useref', function () {
     .pipe(useref())
     .pipe(changed('dist'))
     .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
-    .pipe(gulpIf('*.js', babel()))
+    .pipe(gulpIf('*.js', babel({
+      presets: ['env']
+    })))
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'))

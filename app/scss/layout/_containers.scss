@@ -1,2 +1,9 @@
 // Containers
 @import '../helpers/index';
+
+.banner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top:  5%;
+}

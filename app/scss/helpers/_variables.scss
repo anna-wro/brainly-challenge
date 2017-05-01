@@ -1,38 +1,94 @@
-// Global Config
+// Primary colors
+$black: #020a1b;
+$mintPrimary: #7ed7ac;
+$mintSecondary: #a8edc8;
+$mintSecondaryLight: #d8f8e5;
+$bluePrimary: #57b2f8;
+$blueSecondary: #abe1ff;
+$blueSecondaryLight: #daf3ff;
 
-// Paths
-$path-img: '../img';
-$path-patterns: '../img/patterns';
-$path-fonts: '../fonts';
+// Secondary colors
+$lavenderPrimary: #7a8adb;
+$lavenderSecondary: #b3c4ff;
+$lavenderSecondaryLight: #e2e8ff;
+$peachPrimary: #ff796b;
+$peachSecondary: #ffb3ae;
+$peachSecondaryLight: #ffe2e0;
+$mustardPrimary: #fec83c;
+$mustardSecondary: #ffde8c;
+$mustardSecondaryLight: #fff5d5;
 
-// Font Stacks
-$font-url-google: '';
-$font-family-primary: "",
-sans-serif;
-$font-family-secondary: '',
-'Helvetica Neue',
-Helvetica,
-Arial,
-sans-serif;
+// Grey colors
+$white: #ffffff;
+$grayPrimary: #434e66;
+$graySecondary: #9fa6b5;
+$graySecondaryLight: #e1e8ed;
+$graySecondaryLightest: #f0f3f5;
 
-// Font Weights
-$font-weight-thin: 100;
-$font-weight-light: 300;
-$font-weight-medium: 400;
-$font-weight-bold: 700;
-$font-weight-ultra-bold: 900;
+// Special colors - for games
+$bronze: #f09157;
+$silver: #c8cbd3;
+$gold: #fbcc63;
 
-// Descriptive Base Colors
-$white: #fff;
-$black: #06032f;
-$gray: #f5f5f5;
+// this comment exists to suppress errors about these unused variables:
+// $bronze $silver $gold
 
-// Color Usage
-$color-primary: $black;
-$color-secondary: $black;
-$color-accent: $black;
-$color-shadow: rgba($black, .3);
+// Shadows
+$defaultBottomShadowColor: rgba(0, 0, 0, 0.1);
+$defaultBottomShadow: 0 2px 6px 0 $defaultBottomShadowColor;
 
-// Text
-$base-font-size: 16px;
-$base-line: 1.4;
+// Fonts
+$fontFamilyProximaNova: 'ProximaNova';
+$fontFamilyPrimary: $fontFamilyProximaNova, 'Helvetica', 'Arial', sans-serif;
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightBlack: 900;
+
+// Vertical rhythm
+$baseFont: 16px;
+$baseline: 1.5rem;
+
+// Typo
+$fontSizes: (
+        default: 1rem,      // 16px
+        xsmall: 0.625rem,     // 10px
+        small: 0.875rem,   // 14px
+        medium: 0.9375rem,  // 15px
+        large: 3.625rem,    // 58px
+        xlarge: 4.5rem,     // 72px
+        xxlarge: 5rem,      // 80px
+        obscure: 0.75rem,   // 12px
+        standout: 1.125rem, // 18px
+        subheadline: 1.25rem, // 20px
+        headline: 1.5rem,  // 24px
+        subheader: 2.75rem, // 44px
+        header: 3rem
+);
+
+// Layout
+$layoutMaximumWidth: 1024px;
+$layoutDefaultPadding: 24px;
+
+// Border radius
+$borderRadiusDefault: 8px;
+$borderRadiusLarge: $borderRadiusDefault * 1.5;
+$borderRadiusSmall: $borderRadiusDefault / 2;
+$borderRadiusXsmall: $borderRadiusDefault / 4;
+
+
+// Vertical stack
+$sgHeaderZIndex: 101;
+$overlayZIndex: 999;
+$toplayerZIndex: 1000;
+
+// Breakpoints
+$breakpointMedium: 768px !default;
+$breakpointLarge: 1024px !default;
+
+$breakpointsMap: (
+        'small-only': '(max-width: #{$breakpointMedium - 1px})',
+        'medium-only': '(min-width: #{$breakpointMedium}) and (max-width: #{$breakpointLarge - 1px})',
+        'medium-down': '(max-width: #{$breakpointLarge - 1px})',
+        'medium-up': '(min-width: #{$breakpointMedium})',
+        'large-only': '(min-width: #{$breakpointLarge})'
+);
