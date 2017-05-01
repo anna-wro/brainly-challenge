@@ -15,16 +15,72 @@
 </head>
 <body>
 
-
-<div class="sg-content-box sg-content-box--main" id="js-quiz">
+<header>
     <div class="sg-content-box  sg-content-box--heading">
         <h1 class="sg-header-primary sg-header-primary--light">Brainly Quiz</h1>
     </div>
-    <p class="sg-text sg-text--standout sg-text--light sg-text--info" id="js-info"></p>
-    <div class=" sg-content-box" id="js-buttons">
+</header>
+<section id="js-intro">
+    <div class="sg-content-box sg-content-box__main">
+        <p class="sg-text sg-text--standout sg-text--light sg-text--info" id="js-info"></p>
+        <div class=" sg-content-box" id="js-buttons">
+            <button class="sg-button-primary sg-button-primary--alt-inverse sg-button-primary--yes" id="js-button-yes">
+                Tak!
+            </button>
+            <button class="sg-button-primary sg-button-primary--alt-inverse sg-button-primary--no" id="js-button-no">
+                Nie
+            </button>
+        </div>
     </div>
+</section>
+<section id="js-quiz">
+    <div class="sg-content-box sg-content-box__main sg-content-box__main--quiz">
+        <p class="sg-text sg-text--standout sg-text--light sg-text--info" id="js-question"></p>
+        <div class="sg-label sg-label--secondary ">
+            <div class="sg-label__icon">
+                <div class="sg-radio">
+                    <input class="sg-radio__element" type="radio" id="radio-1" name="answer">
+                    <label class="sg-radio__ghost" for="radio-1"></label>
+                </div>
+            </div>
+            <label class="sg-label__text sg-text-bit--light" for="radio-1"><span id="js-answer-1" class="sg-text sg-text--light sg-text--regular">Answer 1</span></label>
+        </div>
+        <div class="sg-label sg-label--secondary ">
+            <div class="sg-label__icon">
+                <div class="sg-radio">
+                    <input class="sg-radio__element" type="radio" id="radio-2" name="answer">
+                    <label class="sg-radio__ghost" for="radio-2"></label>
+                </div>
+            </div>
+            <label class="sg-label__text sg-text-bit--light" for="radio-2"><span id="js-answer-2" class="sg-text sg-text--light sg-text--regular">Answer 2</span></label>
+        </div>
 
-</div>
+        <div class="sg-label sg-label--secondary ">
+            <div class="sg-label__icon">
+                <div class="sg-radio">
+                    <input class="sg-radio__element" type="radio" id="radio-3" name="answer">
+                    <label class="sg-radio__ghost" for="radio-3"></label>
+                </div>
+            </div>
+            <label class="sg-label__text sg-text-bit--light" for="radio-3"><span id="js-answer-3" class="sg-text sg-text--light sg-text--regular">Answer 3</span></label>
+        </div>
+        <div class="sg-label sg-label--secondary ">
+            <div class="sg-label__icon">
+                <div class="sg-radio">
+                    <input class="sg-radio__element" type="radio" id="radio-4" name="answer">
+                    <label class="sg-radio__ghost" for="radio-4"></label>
+                </div>
+            </div>
+            <label class="sg-label__text sg-text-bit--light" for="radio-4"><span id="js-answer-4" class="sg-text sg-text--light sg-text--regular">Answer 4</span></label>
+        </div>
+        <button class="sg-button-primary sg-button-primary--alt-inverse" id="js-button-prev">
+            Poprzednie
+        </button>
+        <button class="sg-button-primary sg-button-primary--alt-inverse" id="js-button-next">
+            Następne
+        </button>
+    </div>
+</section>
 <!--build:js js/main.min.js -->
 <script src="js/vendor/icons-5459066133.js"></script>
 <script src="js/main.js"></script>

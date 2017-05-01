@@ -34,7 +34,7 @@ p {
 img {
   max-width: 100%; }
 
-.sg-content-box--main {
+.sg-content-box__main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -51,11 +51,11 @@ img {
   margin: 0 auto;
   max-width: 960px; }
 
-.sg-content-box--heading {
-  margin: 10% auto 5%; }
-
 .sg-text--info {
   padding-bottom: 20px; }
+
+.sg-content-box--heading {
+  margin: 10% auto 5%; }
 
 .sg-button-primary {
   margin: 20px 15px; }

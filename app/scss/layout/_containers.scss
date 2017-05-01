@@ -1,18 +1,17 @@
 // Containers
 @import '../helpers/index';
 
-.sg-content-box--main {
+.sg-content-box__main {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
   max-width: 960px;
+
 }
 
-.sg-content-box--heading {
-  margin: 10% auto 5%;
-}
+
 
 .sg-text--info {
   padding-bottom: 20px;
