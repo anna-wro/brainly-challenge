@@ -13,7 +13,6 @@
     "tests"
   ],
   "dependencies": {
-    "stretch-css": "^1.0.3",
     "normalize-css": "^6.0.0"
   }
 }

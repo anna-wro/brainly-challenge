@@ -6,12 +6,12 @@ h1 {
 }
 
 ::selection {
-  background: $mintPrimary;
-  color: $white;
+  background: $white;
+  color: $bluePrimary;
 }
 
 ::-moz-selection {
-  background: $mintPrimary;
-  color: $white;
+  background: $white;
+  color: $bluePrimary;
 }
 
