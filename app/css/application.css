@@ -49,6 +49,9 @@ img {
   max-width: 700px;
   padding: 0 20px; }
 
+.container__header {
+  max-width: 700px; }
+
 .container__timer {
   padding-top: 21px; }
 
@@ -75,6 +78,7 @@ img {
   text-align: center; }
 
 .container__results {
+  margin: 0 auto;
   padding: 5% 0 10px; }
 
 .text--challenge {

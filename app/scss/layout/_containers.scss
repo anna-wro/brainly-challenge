@@ -7,6 +7,10 @@
   padding: 0 20px;
 }
 
+.container__header {
+  max-width: $quizMaxWidth;
+}
+
 .container__timer {
   padding-top: 21px;
 }
@@ -37,6 +41,7 @@
 }
 
 .container__results {
+  margin: 0 auto;
   padding: 5% 0 10px;
 }
 

@@ -2,7 +2,7 @@
 
 ![Quiz](https://github.com/anna-wro/brainly-challenge/blob/master/screenshots/quiz.png)
 
-Programming challenge from Brainly
+Recruitment challenge from [Brainly](https://brainly.co/)
 
 ### Technical requirements
 * Vanilla JavaScript ES2015+
