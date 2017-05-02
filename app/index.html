@@ -27,7 +27,7 @@
                 </a>
             </div>
             <div class="sg-header__middle">
-                <div class="sg-text sg-text--light cu-text--challenge">Internship challenge</div>
+                <div class="sg-text sg-text--light text--challenge">Internship challenge</div>
             </div>
             <div class="sg-header__right sg-hide-for-small-only">
                 <button class="sg-icon-as-button sg-icon-as-button--transparent sg-icon-as-button--light">
@@ -72,9 +72,9 @@
     </div>
 </header>
 <section id="js-intro">
-    <div class="sg-content-box sg-content-box--full cu-content-box">
-        <div class="cu-heading">
-            <h1 class="sg-header-primary cu-heading__title">
+    <div class="sg-content-box sg-content-box--full container">
+        <div class="heading">
+            <h1 class="sg-header-primary heading__title">
                 Quiz</h1>
         </div>
         <div class="sg-text  sg-text--gray sg-text--standout sg-text--info " id="js-info"></div>
@@ -89,13 +89,21 @@
     </div>
 </section>
 <section id="js-quiz">
-    <div class="cu-content-box cu-heading--started">
-        <div class="sg-header-primary cu-heading__title cu-heading__title--started">
-            Quiz</div>
-        <p class="sg-text sg-text--standout sg-text--info sg-text--gray-secondary cu-text--timer" id="js-time"></p>
+    <div class="container heading--started">
+        <div class="sg-header-primary heading__title heading__title--started">
+            Quiz
+        </div>
+        <div class="container__timer">
+            <p class="sg-text sg-text--standout sg-text--gray-secondary text--timer" id="js-time"></p>
+        </div>
     </div>
-    <div class="sg-content-box cu-content-box">
-        <p class="sg-text sg-text--standout sg-text--info cu-text--question" id="js-question"></p>
+    <div class="sg-content-box container">
+        <div class="container__progress">
+            <div class="progress-bar">
+                <div class="progress-bar__bar" id="js-progress-bar"></div>
+            </div>
+        </div>
+        <p class="sg-text sg-text--gray text--question" id="js-question"></p>
         <div class="container__radio">
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
@@ -105,7 +113,7 @@
                     </div>
                 </div>
                 <label class="sg-label__text" for="js-radio-1"><span id="js-answer-1"
-                                                                     class="sg-text sg-text--regular">Answer 1</span></label>
+                                                                     class="sg-text sg-text--regular sg-text--gray">Answer 1</span></label>
             </div>
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
@@ -115,7 +123,7 @@
                     </div>
                 </div>
                 <label class="sg-label__text" for="js-radio-2"><span id="js-answer-2"
-                                                                     class="sg-text sg-text--regular">Answer 2</span></label>
+                                                                     class="sg-text sg-text--regular sg-text--gray">Answer 2</span></label>
             </div>
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
@@ -125,7 +133,7 @@
                     </div>
                 </div>
                 <label class="sg-label__text" for="js-radio-3"><span id="js-answer-3"
-                                                                     class="sg-text sg-text--regular">Answer 3</span></label>
+                                                                     class="sg-text sg-text--regular sg-text--gray">Answer 3</span></label>
             </div>
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
@@ -135,7 +143,7 @@
                     </div>
                 </div>
                 <label class="sg-label__text" for="js-radio-4"><span id="js-answer-4"
-                                                                     class="sg-text sg-text--regular">Answer 4</span></label>
+                                                                     class="sg-text sg-text--regular sg-text--gray">Answer 4</span></label>
             </div>
         </div>
         <div class="container__button">
@@ -145,20 +153,20 @@
             <button class="sg-button-primary sg-button-primary--alt" id="js-button-next">
                 Następne
             </button>
-            <button class="sg-button-primary sg-button-primary--alt" id="js-button-fin">
+            <button class="sg-button-primary button-primary--results" id="js-button-fin">
                 Zobacz wyniki
             </button>
         </div>
-       <div class="cu-progress-bar">
-           <div class="cu-progress-bar__bar" id="js-progress-bar"></div>
-       </div>
     </div>
 </section>
 <section id="js-result">
-    <div class="sg-content-box sg-content-box__main cu-content-box">
+    <div class="sg-content-box sg-content-box__main container">
         <p class="sg-text sg-text--gray sg-text--standout sg-text--info" id="js-score"></p>
         <button class="sg-button-primary sg-button-primary--alt" id="js-button-again">
             Spróbuj jeszcze raz
+        </button>
+        <button class="sg-button-primary sg-button-primary--alt" id="js-button-compare">
+            Porównaj odpowiedzi
         </button>
     </div>
 </section>
