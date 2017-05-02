@@ -1,6 +1,35 @@
 // Header
 @import '../helpers/index';
 
-.cu-text--challenge {
+.text--challenge {
   text-transform: uppercase;
+}
+
+.heading {
+  margin: 50px auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 8% auto 5%;
+  }
+}
+
+.heading__title {
+  color: $lavenderPrimary;
+  &--started {
+    text-align: left;
+  }
+}
+
+.heading--started {
+  columns: 2;
+  margin: 3% auto 20px;
+}
+
+.heading--result {
+  margin-bottom: 5px;
+  margin-top: 50px;
+}
+
+.heading__title--result {
+  text-align: center;
 }

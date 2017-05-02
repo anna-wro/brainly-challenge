@@ -41,7 +41,6 @@ let score = 0;
       counter = data.questions.length
       questions = data.questions
       prepareQuiz()
-      startQuiz() ////////////////////////////temp
     } else {
       infoDiv.textContent = `Coś poszło nie tak. Spróbuj ponownie!`
     }
@@ -65,7 +64,12 @@ function prepareQuiz () {
   yesButton.addEventListener('click', () => startQuiz())
   noButton.addEventListener('click', () => {
     infoDiv.textContent = `A może jednak spróbujesz? :)
-      Na pewno dowiesz się czegoś nowego!`
+      Na pewno dowiesz się czegoś nowego!
+      
+      Poza tym, jeśli nie chce Ci się klikać, 
+      możesz nawigować między pytaniami 
+      za pomocą klawiszy - strzałek.
+      `
     noButton.style.display = 'none'
     yesButton.textContent = `ok, zaczynamy!`
   })
@@ -345,24 +349,56 @@ function displayResult () {
   resultSection.style.display = 'block'
   switch (score) {
     case  9:
-      scoreP.textContent = `Odpowiedziałeś/-aś dobrze na wszystkie pytania!`
+      scoreP.textContent = `Odpowiedziałeś/-aś dobrze na wszystkie pytania!
+      
+      To niezwykły sukces.
+      Czerp z tego dużo satysfakcji
+      za każdym razem, gdy o tym pomyślisz!`
+      againButton.textContent = 'Powtórz quiz'
+      compareButton.textContent = 'Porównaj odpowiedzi'
       break
     case 8:
     case 7:
     case 6:
     case 5:
-      scoreP.textContent = `Świetnie Ci poszło, masz aż ${score} punktów!`
+      scoreP.textContent = `Świetnie Ci poszło, masz aż ${score} punktów!
+      
+     „Im dokładniej określisz cel, tym większa szansa, że go zrealizujesz.”
+      - może następnym razem powalczysz o ${score + 1} punktów?
+      `
+      againButton.textContent = 'Chętnie!'
+      compareButton.textContent = 'Gdzie zrobiłem/am błąd?'
       break
     case 4:
     case 3:
     case 2:
-      scoreP.textContent = `Zdobyłeś/-aś ${score} punkty`
+      scoreP.textContent = `Zdobyłeś/-aś ${score} punkty. Brawo!
+      
+      „Najpewniejszą drogą do sukcesu 
+      jest próbowanie po prostu jeden, następny raz”
+      ...co Ty na to?
+      `
+      againButton.textContent = 'Spróbuję jeszcze raz'
+      compareButton.textContent = 'Gdzie zrobiłem/am błąd?'
       break
     case 1:
-      scoreP.textContent = `Udało Ci się dobrze odpowiedzieć na jedno pytanie`
+      scoreP.textContent = `Udało Ci się dobrze odpowiedzieć na jedno pytanie, brawo!
+      
+      „Nawet najdalszą podróż zaczyna się od pierwszego kroku”
+      - Ty swój już postawiłeś/aś, może pora na kolejne?`
+      againButton.textContent = 'Chcę powtórzyć quiz'
+      compareButton.textContent = 'Jakie są odpowiedzi?'
       break
     case 0:
-      scoreP.textContent = `Niestety nie zdobyłeś/-aś żadnego punktu`
+      scoreP.textContent = `Nie zdobyłeś/aś ani jednego punktu. 
+      
+      Nic nie szkodzi, pamiętaj o słowach Szekspira:
+      „Najlepszych ludzi uformowało naprawianie własnych błędów”
+      ...i do dzieła!
+      `
+      againButton.textContent = 'Tym razem pójdzie mi lepiej!'
+      compareButton.textContent = 'Jakie są odpowiedzi?'
+
       break
   }
 

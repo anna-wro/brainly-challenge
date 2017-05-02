@@ -1,6 +1,6 @@
 @import '../helpers/index';
 
 // Line breaks in the info message
-.sg-text--info {
+.text--info, .text--result {
   white-space: pre-line;
 }

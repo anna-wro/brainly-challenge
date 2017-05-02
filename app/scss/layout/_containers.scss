@@ -1,28 +1,70 @@
 // Containers
 @import '../helpers/index';
 
-.sg-content-box__main {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.container {
   margin: 0 auto;
-  max-width: 800px;
-
+  max-width: $quizMaxWidth;
+  padding: 0 20px;
 }
 
-.sg-text--info {
-  padding-bottom: 20px;
+.container__timer {
+  padding-top: 21px;
 }
 
 .container__button {
-  margin-top: 5%;
+  float: right;
+  margin: 15px auto 30px;
 }
 
-.heading__title {
-  margin: 50px auto;
-  @media screen and (min-width: 768px) {
-    margin: 4% auto 2%;
+.container__button--results {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container__radio {
+  padding-top: 10px;
+  @media screen and (min-width: $breakpointMedium) {
+    columns: 2;
   }
+}
+
+.container__progress {
+  margin-bottom: 30px;
+}
+
+.container__intro {
+  text-align: center;
+}
+
+.container__results {
+  padding: 5% 0 10px;
+}
+
+.text--info {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.text--timer {
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.text--question {
+  text-align: left;
+}
+
+.progress-bar {
+  background-color: $graySecondaryLight;
+  border-radius: $borderRadiusDefault;
+  width: 100%;
+}
+
+.progress-bar__bar {
+  background-color: $lavenderPrimary;
+  border-radius: $borderRadiusDefault;
+  height: 20px;
+  transition: .6s ease-in-out width;
+  width: 1%;
 }
 

@@ -77,12 +77,12 @@
     </div>
 </header>
 <section id="js-intro">
-    <div class="sg-content-box sg-content-box--full container">
+    <div class="sg-content-box sg-content-box--full container container__intro">
         <div class="heading">
             <h1 class="sg-header-primary heading__title">
                 Quiz</h1>
         </div>
-        <div class="sg-text  sg-text--gray sg-text--standout sg-text--info " id="js-info"></div>
+        <div class="sg-text  sg-text--gray sg-text--standout text--info " id="js-info"></div>
         <div class=" sg-content-box" id="js-buttons">
             <button class="sg-button-primary sg-button-primary--alt sg-button-primary--yes" id="js-button-yes">
                 Tak!
@@ -95,9 +95,9 @@
 </section>
 <section id="js-quiz">
     <div class="container heading--started">
-        <div class="sg-header-primary heading__title heading__title--started">
+        <h2 class="sg-header-primary heading__title heading__title--started">
             Quiz
-        </div>
+        </h2>
         <div class="container__timer">
             <p class="sg-text sg-text--standout sg-text--gray-secondary text--timer" id="js-time"></p>
         </div>
@@ -166,13 +166,22 @@
 </section>
 <section id="js-result">
     <div class="sg-content-box sg-content-box__main container">
-        <p class="sg-text sg-text--gray sg-text--standout sg-text--info" id="js-score"></p>
-        <button class="sg-button-primary sg-button-primary--alt" id="js-button-again">
-            Spróbuj jeszcze raz
-        </button>
-        <button class="sg-button-primary sg-button-primary--alt" id="js-button-compare">
-            Porównaj odpowiedzi
-        </button>
+        <div class="heading heading--result">
+            <h2 class="sg-header-primary heading__title heading__title--result">
+                Wyniki quizu</h2>
+        </div>
+        <div class="container__results">
+            <p class="sg-text sg-text--gray sg-text--standout sg-text--info text--result" id="js-score"></p>
+        </div>
+        <div class="container__button--results">
+            <button class="sg-button-primary button--whatnow" id="js-button-again">
+                Spróbuję jeszcze raz
+            </button>
+            <button class="sg-button-primary sg-button-primary--alt button--whatnow" id="js-button-compare">
+                Gdzie zrobiłem/am błąd?
+            </button>
+        </div>
+
     </div>
 </section>
 <!--build:js js/main.min.js -->
