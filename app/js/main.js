@@ -95,6 +95,8 @@ To jak, zaczynamy?`
 
       display.textContent = minutes + ":" + seconds;
 
+      if (timer < 11) timeP.classList.add('shake');
+
       if (--timer < 0) {
         finishQuiz()
         timer = duration;
@@ -104,7 +106,7 @@ To jak, zaczynamy?`
 
   function startQuiz () {
     introSection.style.display = 'none'
-    startTimer(data['time_seconds'], timeP);
+    startTimer(50, timeP);
     loadQuestion()
   }
 
@@ -196,10 +198,13 @@ To jak, zaczynamy?`
       case 3:
       case 2:
         scoreP.textContent = `Zdobyłeś/-aś ${score} punkty`
+        break;
       case 1:
         scoreP.textContent = `Udało Ci się dobrze odpowiedzieć na jedno pytanie`;
+        break;
       case 0:
         scoreP.textContent = `Niestety nie zdobyłeś/-aś żadnego punktu`
+        break;
     }
 
   }
