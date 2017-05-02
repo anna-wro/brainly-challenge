@@ -10,6 +10,7 @@ const noButton = document.getElementById('js-button-no')
 const prevButton = document.getElementById('js-button-prev')
 const nextButton = document.getElementById('js-button-next')
 const finButton = document.getElementById('js-button-fin')
+const againButton = document.getElementById('js-button-again')
 const question = document.getElementById('js-question')
 const progressBarDiv = document.getElementById('js-progress-bar')
 const answer1 = document.getElementById('js-answer-1')
@@ -22,6 +23,7 @@ const radio2 = document.getElementById('js-radio-2')
 const radio3 = document.getElementById('js-radio-3')
 const radio4 = document.getElementById('js-radio-4')
 let data, questions, counter, time_minutes
+let alreadyFinished = false
 let choices = []
 let index = 0
 let score = 0;
@@ -65,48 +67,57 @@ let score = 0;
       noButton.style.display = 'none'
       yesButton.textContent = `ok, zaczynamy!`
     })
-
-    // Previous/next buttons
-    prevButton.addEventListener('click', () => {
-      saveAnswer()
-      index--
-      loadQuestion()
-      checkForAnswer()
-    })
-    nextButton.addEventListener('click', () => {
-      saveAnswer()
-      index++
-      loadQuestion()
-      checkForAnswer()
-    })
-    // See results button
-    finButton.addEventListener('click', () => finishQuiz())
   }
 
-  function startTimer(duration, display) {
-    let timer = duration, minutes, seconds;
+  // Previous/next buttons
+  prevButton.addEventListener('click', () => {
+    saveAnswer()
+    index--
+    loadQuestion()
+    checkForAnswer()
+  })
+  nextButton.addEventListener('click', () => {
+    saveAnswer()
+    index++
+    loadQuestion()
+    checkForAnswer()
+  })
+
+// See results button
+  finButton.addEventListener('click', () => finishQuiz())
+
+  // Start again button
+  againButton.addEventListener('click', () => startQuiz())
+
+  function startTimer (duration, display) {
+    let timer = duration, minutes, seconds
     setInterval(function () {
-      minutes = parseInt(timer / 60, 10);
-      seconds = parseInt(timer % 60, 10);
+      minutes = parseInt(timer / 60, 10)
+      seconds = parseInt(timer % 60, 10)
 
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
+      minutes = minutes < 10 ? '0' + minutes : minutes
+      seconds = seconds < 10 ? '0' + seconds : seconds
 
-      display.textContent = minutes + ":" + seconds;
+      display.textContent = minutes + ':' + seconds
 
-      if (timer < 11) timeP.classList.add('shake');
+      if (timer < 11) timeP.classList.add('shake')
 
       if (--timer < 0) {
         finishQuiz()
-        timer = duration;
+        timer = duration
       }
-    }, 1000);
+    }, 1000)
   }
 
   function startQuiz () {
+    if (alreadyFinished) {
+      for (let i = 0; i < counter; i++) choices[i] = -1;
+      index = score = 0
+    }
     introSection.style.display = 'none'
+    resultSection.style.display = 'none'
     quizSection.style.display = 'block'
-    startTimer(data['time_seconds'], timeP);
+    startTimer(data['time_seconds'], timeP)
     loadQuestion()
   }
 
@@ -149,7 +160,7 @@ let score = 0;
 
   function loadQuestion () {
     // Hiding prev/next button when not needed
-    prevButton.style.display =  index < 1 ? 'none' : 'inline-block'
+    prevButton.style.display = index < 1 ? 'none' : 'inline-block'
     if (index > 7) {
       nextButton.style.display = 'none'
       finButton.style.display = 'inline-block'
@@ -158,8 +169,8 @@ let score = 0;
       nextButton.style.display = 'inline-block'
     }
     // Getting current question
-    let percentsLeft = ((index+1)/counter)*100;
-    progressBarDiv.style.width = percentsLeft + '%';
+    let percentsLeft = ((index + 1) / counter) * 100
+    progressBarDiv.style.width = percentsLeft + '%'
     question.textContent = questions[index].question
     answer1.textContent = questions[index].answers[0].answer
     answer2.textContent = questions[index].answers[1].answer
@@ -169,6 +180,7 @@ let score = 0;
 
   function finishQuiz () {
     saveAnswer()
+    alreadyFinished = true
     quizSection.style.display = 'none'
     compareAnswers()
     displayResult()
@@ -179,7 +191,7 @@ let score = 0;
     for (let i = 0; i < counter; i++) {
       let choice = choices[i]
       if (choice >= 0) {  // checking only if user answered this question
-        questions[i].answers[choice].correct ? score++ : score;
+        questions[i].answers[choice].correct ? score++ : score
       }
     }
   }
@@ -188,25 +200,25 @@ let score = 0;
     resultSection.style.display = 'block'
     switch (score) {
       case  9:
-        scoreP.textContent = `Odpowiedziałeś/-aś dobrze na wszystkie pytania!`;
-        break;
+        scoreP.textContent = `Odpowiedziałeś/-aś dobrze na wszystkie pytania!`
+        break
       case 8:
       case 7:
       case 6:
       case 5:
-        scoreP.textContent = `Świetnie Ci poszło, masz aż ${score} punktów!`;
-        break;
+        scoreP.textContent = `Świetnie Ci poszło, masz aż ${score} punktów!`
+        break
       case 4:
       case 3:
       case 2:
         scoreP.textContent = `Zdobyłeś/-aś ${score} punkty`
-        break;
+        break
       case 1:
-        scoreP.textContent = `Udało Ci się dobrze odpowiedzieć na jedno pytanie`;
-        break;
+        scoreP.textContent = `Udało Ci się dobrze odpowiedzieć na jedno pytanie`
+        break
       case 0:
         scoreP.textContent = `Niestety nie zdobyłeś/-aś żadnego punktu`
-        break;
+        break
     }
 
   }
