@@ -49,7 +49,9 @@
                         <div class="sg-avatar sg-avatar--small">
                             <div class="sg-avatar__image sg-avatar__image--icon">
                                 <a href="https://anna.pm">
-                                    <img src="https://anna.pm/img/fav.png">
+                                    <svg class="sg-icon sg-icon--x24 sg-icon--gray">
+                                        <use xlink:href="#icon-profile"></use>
+                                    </svg>
                                 </a>
                             </div>
                         </div>
@@ -69,13 +71,12 @@
         </div>
     </div>
 </header>
-<div class="sg-content-box  sg-content-box--heading heading">
-    <h1 class="sg-text-bit sg-text-bit--warning heading__title">
-        Quiz
-    </h1>
-</div>
-<section class="container__section" id="js-intro">
-    <div class="sg-content-box sg-content-box--full sg-content-box__main">
+<section id="js-intro">
+    <div class="sg-content-box sg-content-box--full cu-content-box">
+        <div class="cu-heading">
+            <h1 class="sg-header-primary cu-heading__title">
+                Quiz</h1>
+        </div>
         <div class="sg-text  sg-text--gray sg-text--standout sg-text--info " id="js-info"></div>
         <div class=" sg-content-box" id="js-buttons">
             <button class="sg-button-primary sg-button-primary--alt sg-button-primary--yes" id="js-button-yes">
@@ -87,10 +88,14 @@
         </div>
     </div>
 </section>
-<section class="container__section" id="js-quiz">
-    <div class="sg-content-box sg-content-box__main sg-content-box__main--quiz">
-        <p class="sg-text sg-text--standout sg-text--info" id="js-time"></p>
-        <p class="sg-text sg-text--standout sg-text--info" id="js-question"></p>
+<section id="js-quiz">
+    <div class="cu-content-box cu-heading--started">
+        <div class="sg-header-primary cu-heading__title cu-heading__title--started">
+            Quiz</div>
+        <p class="sg-text sg-text--standout sg-text--info sg-text--gray-secondary cu-text--timer" id="js-time"></p>
+    </div>
+    <div class="sg-content-box cu-content-box">
+        <p class="sg-text sg-text--standout sg-text--info cu-text--question" id="js-question"></p>
         <div class="container__radio">
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
@@ -144,10 +149,13 @@
                 Zobacz wyniki
             </button>
         </div>
+       <div class="cu-progress-bar">
+           <div class="cu-progress-bar__bar" id="js-progress-bar"></div>
+       </div>
     </div>
 </section>
-<section class="container__section" id="js-result">
-    <div class="sg-content-box sg-content-box__main">
+<section id="js-result">
+    <div class="sg-content-box sg-content-box__main cu-content-box">
         <p class="sg-text sg-text--gray sg-text--standout sg-text--info" id="js-score"></p>
         <button class="sg-button-primary sg-button-primary--alt" id="js-button-again">
             Spróbuj jeszcze raz

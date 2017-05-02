@@ -1,8 +1,6 @@
 const infoDiv = document.getElementById('js-info')
 const scoreP = document.getElementById('js-score')
 const timeP = document.getElementById('js-time')
-const messageIcn = document.getElementById('js-icn-message')
-const overlay = document.getElementById('js-overlay');
 const buttonsDiv = document.getElementById('js-buttons')
 const introSection = document.getElementById('js-intro')
 const quizSection = document.getElementById('js-quiz')
@@ -12,8 +10,8 @@ const noButton = document.getElementById('js-button-no')
 const prevButton = document.getElementById('js-button-prev')
 const nextButton = document.getElementById('js-button-next')
 const finButton = document.getElementById('js-button-fin')
-const againButton = document.getElementById('js-button-again')
 const question = document.getElementById('js-question')
+const progressBarDiv = document.getElementById('js-progress-bar')
 const answer1 = document.getElementById('js-answer-1')
 const answer2 = document.getElementById('js-answer-2')
 const answer3 = document.getElementById('js-answer-3')
@@ -40,9 +38,9 @@ let score = 0;
       if (request.status >= 200 && request.status < 400) {
         data = JSON.parse(request.responseText)
         counter = data.questions.length
-        console.log(data)
         questions = data.questions
         prepareQuiz()
+        startQuiz() ////////////////////////////temp
       } else {
         infoDiv.textContent = `Coś poszło nie tak. Spróbuj ponownie!`
       }
@@ -108,7 +106,7 @@ let score = 0;
   function startQuiz () {
     introSection.style.display = 'none'
     quizSection.style.display = 'block'
-   // startTimer(data['time_seconds'], timeP); !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    startTimer(data['time_seconds'], timeP);
     loadQuestion()
   }
 
@@ -151,7 +149,7 @@ let score = 0;
 
   function loadQuestion () {
     // Hiding prev/next button when not needed
-    index < 1 ? prevButton.style.visibility = 'hidden' : prevButton.style.visibility = 'visible'
+    prevButton.style.display =  index < 1 ? 'none' : 'inline-block'
     if (index > 7) {
       nextButton.style.display = 'none'
       finButton.style.display = 'inline-block'
@@ -160,6 +158,8 @@ let score = 0;
       nextButton.style.display = 'inline-block'
     }
     // Getting current question
+    let percentsLeft = ((index+1)/counter)*100;
+    progressBarDiv.style.width = percentsLeft + '%';
     question.textContent = questions[index].question
     answer1.textContent = questions[index].answers[0].answer
     answer2.textContent = questions[index].answers[1].answer
@@ -210,9 +210,4 @@ let score = 0;
     }
 
   }
-
-  messageIcn.addEventListener('click', ()=>{
-    console.log('it works!');
-    messageIcn.src
-  })
 })()
