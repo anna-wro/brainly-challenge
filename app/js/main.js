@@ -1,6 +1,8 @@
-const infoP = document.getElementById('js-info')
+const infoDiv = document.getElementById('js-info')
 const scoreP = document.getElementById('js-score')
 const timeP = document.getElementById('js-time')
+const messageIcn = document.getElementById('js-icn-message')
+const overlay = document.getElementById('js-overlay');
 const buttonsDiv = document.getElementById('js-buttons')
 const introSection = document.getElementById('js-intro')
 const quizSection = document.getElementById('js-quiz')
@@ -28,6 +30,7 @@ let score = 0;
 
 (() => {
   buttonsDiv.style.display = 'none'
+  quizSection.style.display = 'none'
   resultSection.style.display = 'none'
 
   let getJSON = (() => {
@@ -40,31 +43,29 @@ let score = 0;
         console.log(data)
         questions = data.questions
         prepareQuiz()
-        startQuiz() // TEMP!!!!!!!!!!!!!!!!!!!!!!!!
-        introSection.style.display = 'none' ////!!!!!!!!!!!!!!!!TYMCZASOWE
-
       } else {
-        infoP.textContent = `Coś poszło nie tak. Spróbuj ponownie!`
+        infoDiv.textContent = `Coś poszło nie tak. Spróbuj ponownie!`
       }
     }
-    request.onerror = () => infoP.textContent = 'Coś poszło nie tak'
+    request.onerror = () => infoDiv.textContent = 'Coś poszło nie tak'
     request.send()
   })()
 
   function prepareQuiz () {
     // Info about the quiz
     time_minutes = data['time_seconds'] / 60
-    infoP.textContent = `Na rozwiązanie quizu będziesz mieć ${time_minutes} minut. 
-To jak, zaczynamy?`
+    infoDiv.textContent = `Przed Tobą ${counter}-pytaniowy quiz z różnych dziedzin.
+    Na jego rozwiązanie będziesz mieć ${time_minutes} minut.
+    To jak, zaczynamy?`
 
     // Start-or-not buttons
     buttonsDiv.style.display = 'block'
-
     yesButton.addEventListener('click', () => startQuiz())
     noButton.addEventListener('click', () => {
-      infoP.textContent = `Co w takim razie tu robisz?`
+      infoDiv.textContent = `A może jednak spróbujesz? :)
+      Na pewno dowiesz się czegoś nowego!`
       noButton.style.display = 'none'
-      yesButton.textContent = `ok, zaczynam`
+      yesButton.textContent = `ok, zaczynamy!`
     })
 
     // Previous/next buttons
@@ -106,7 +107,8 @@ To jak, zaczynamy?`
 
   function startQuiz () {
     introSection.style.display = 'none'
-    startTimer(50, timeP);
+    quizSection.style.display = 'block'
+   // startTimer(data['time_seconds'], timeP); !!!!!!!!!!!!!!!!!!!!!!!!!!!!
     loadQuestion()
   }
 
@@ -208,4 +210,9 @@ To jak, zaczynamy?`
     }
 
   }
+
+  messageIcn.addEventListener('click', ()=>{
+    console.log('it works!');
+    messageIcn.src
+  })
 })()

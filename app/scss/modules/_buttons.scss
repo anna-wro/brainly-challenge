@@ -2,12 +2,5 @@
 @import '../helpers/index';
 
 .sg-button-primary {
-
-  margin: 20px 15px;
-  &--yes:hover {
-    color: $mintPrimary;
-  }
-  &--no:hover {
-    color: $peachPrimary;
-  }
+  margin: 20px 10px;
 }

@@ -18,3 +18,11 @@
 .container__button {
   margin-top: 5%;
 }
+
+.heading__title {
+  margin: 50px auto;
+  @media screen and (min-width: 768px) {
+    margin: 4% auto 2%;
+  }
+}
+

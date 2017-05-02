@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Quiz</title>
+    <title>Internship Challenge</title>
     <meta name="description" content="">
     <meta name="author" content="Anna Wróbel">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,27 +16,81 @@
 <body>
 
 <header>
-    <div class="sg-content-box  sg-content-box--heading">
-        <h1 class="sg-header-primary sg-header-primary--light">Brainly Quiz</h1>
+    <div class="sg-header">
+        <div class="sg-header__container">
+            <div class="sg-header__left">
+                <a href="#" class="sg-home-button">
+                    <img class="sg-home-button__logo-small"
+                         src="https://styleguide.brainly.com/images/logos/brainly-mobile-426ef8718f.svg">
+                    <img class="sg-home-button__logo-big"
+                         src="https://styleguide.brainly.com/images/logos/brainly-761d75d6ea.svg">
+                </a>
+            </div>
+            <div class="sg-header__middle">
+                <div class="sg-text sg-text--light cu-text--challenge">Internship challenge</div>
+            </div>
+            <div class="sg-header__right sg-hide-for-small-only">
+                <button class="sg-icon-as-button sg-icon-as-button--transparent sg-icon-as-button--light">
+                    <div class="sg-icon-as-button__hole">
+                        <div class="sg-overlayed-box">
+                            <svg class="sg-icon sg-icon--x22 sg-icon--adaptive" id="js-icn-message">
+                                <use xlink:href="#icon-messages"></use>
+                            </svg>
+                            <div class="sg-overlayed-box__overlay">
+                                <div class="sg-badge sg-badge--rounded sg-badge--peach">
+                                    <div class="sg-text sg-text--emphasised sg-text--xsmall sg-text--light">1</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+                <button class="sg-icon-as-button sg-icon-as-button--transparent">
+                    <div class="sg-icon-as-button__hole">
+                        <div class="sg-avatar sg-avatar--small">
+                            <div class="sg-avatar__image sg-avatar__image--icon">
+                                <a href="https://anna.pm">
+                                    <img src="https://anna.pm/img/fav.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+
+            </div>
+            <div class="sg-header__right sg-hide-for-medium-up">
+                <button class="sg-icon-as-button sg-icon-as-button--light">
+                    <div class="sg-icon-as-button__hole">
+                        <svg class="sg-icon sg-icon--x26 sg-icon--adaptive">
+                            <use xlink:href="#icon-menu"></use>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
     </div>
 </header>
-<section id="js-intro">
-    <div class="sg-content-box sg-content-box__main">
-        <p class="sg-text sg-text--standout sg-text--light sg-text--info" id="js-info"></p>
+<div class="sg-content-box  sg-content-box--heading heading">
+    <h1 class="sg-text-bit sg-text-bit--warning heading__title">
+        Quiz
+    </h1>
+</div>
+<section class="container__section" id="js-intro">
+    <div class="sg-content-box sg-content-box--full sg-content-box__main">
+        <div class="sg-text  sg-text--gray sg-text--standout sg-text--info " id="js-info"></div>
         <div class=" sg-content-box" id="js-buttons">
-            <button class="sg-button-primary sg-button-primary--alt-inverse sg-button-primary--yes" id="js-button-yes">
+            <button class="sg-button-primary sg-button-primary--alt sg-button-primary--yes" id="js-button-yes">
                 Tak!
             </button>
-            <button class="sg-button-primary sg-button-primary--alt-inverse sg-button-primary--no" id="js-button-no">
+            <button class="sg-button-primary sg-button-primary--alt sg-button-primary--no" id="js-button-no">
                 Nie
             </button>
         </div>
     </div>
 </section>
-<section id="js-quiz">
+<section class="container__section" id="js-quiz">
     <div class="sg-content-box sg-content-box__main sg-content-box__main--quiz">
-        <p class="sg-text sg-text--standout sg-text--light sg-text--info" id="js-time"></p>
-        <p class="sg-text sg-text--standout sg-text--light sg-text--info" id="js-question"></p>
+        <p class="sg-text sg-text--standout sg-text--info" id="js-time"></p>
+        <p class="sg-text sg-text--standout sg-text--info" id="js-question"></p>
         <div class="container__radio">
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
@@ -45,8 +99,8 @@
                         <label class="sg-radio__ghost" for="js-radio-1"></label>
                     </div>
                 </div>
-                <label class="sg-label__text sg-text-bit--light" for="js-radio-1"><span id="js-answer-1"
-                                                                                     class="sg-text sg-text--light sg-text--regular">Answer 1</span></label>
+                <label class="sg-label__text" for="js-radio-1"><span id="js-answer-1"
+                                                                     class="sg-text sg-text--regular">Answer 1</span></label>
             </div>
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
@@ -55,8 +109,8 @@
                         <label class="sg-radio__ghost" for="js-radio-2"></label>
                     </div>
                 </div>
-                <label class="sg-label__text sg-text-bit--light" for="js-radio-2"><span id="js-answer-2"
-                                                                                     class="sg-text sg-text--light sg-text--regular">Answer 2</span></label>
+                <label class="sg-label__text" for="js-radio-2"><span id="js-answer-2"
+                                                                     class="sg-text sg-text--regular">Answer 2</span></label>
             </div>
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
@@ -65,8 +119,8 @@
                         <label class="sg-radio__ghost" for="js-radio-3"></label>
                     </div>
                 </div>
-                <label class="sg-label__text sg-text-bit--light" for="js-radio-3"><span id="js-answer-3"
-                                                                                     class="sg-text sg-text--light sg-text--regular">Answer 3</span></label>
+                <label class="sg-label__text" for="js-radio-3"><span id="js-answer-3"
+                                                                     class="sg-text sg-text--regular">Answer 3</span></label>
             </div>
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
@@ -75,30 +129,29 @@
                         <label class="sg-radio__ghost" for="js-radio-4"></label>
                     </div>
                 </div>
-                <label class="sg-label__text sg-text-bit--light" for="js-radio-4"><span id="js-answer-4"
-                                                                                     class="sg-text sg-text--light sg-text--regular">Answer 4</span></label>
+                <label class="sg-label__text" for="js-radio-4"><span id="js-answer-4"
+                                                                     class="sg-text sg-text--regular">Answer 4</span></label>
             </div>
         </div>
         <div class="container__button">
-            <button class="sg-button-primary sg-button-primary--alt-inverse" id="js-button-prev">
+            <button class="sg-button-primary sg-button-primary--alt" id="js-button-prev">
                 Poprzednie
             </button>
-            <button class="sg-button-primary sg-button-primary--alt-inverse" id="js-button-next">
+            <button class="sg-button-primary sg-button-primary--alt" id="js-button-next">
                 Następne
             </button>
-            <button class="sg-button-primary sg-button-primary--alt-inverse" id="js-button-fin">
+            <button class="sg-button-primary sg-button-primary--alt" id="js-button-fin">
                 Zobacz wyniki
             </button>
         </div>
     </div>
 </section>
-<section id="js-result">
+<section class="container__section" id="js-result">
     <div class="sg-content-box sg-content-box__main">
-        <p class="sg-text sg-text--standout sg-text--light sg-text--info" id="js-score"></p>
-            <button class="sg-button-primary sg-button-primary--alt-inverse sg-button-primary--yes" id="js-button-again">
-               Spróbuj jeszcze raz
-            </button>
-        </div>
+        <p class="sg-text sg-text--gray sg-text--standout sg-text--info" id="js-score"></p>
+        <button class="sg-button-primary sg-button-primary--alt" id="js-button-again">
+            Spróbuj jeszcze raz
+        </button>
     </div>
 </section>
 <!--build:js js/main.min.js -->

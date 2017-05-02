@@ -6,12 +6,16 @@ h1 {
 }
 
 ::selection {
-  background: $white;
-  color: $bluePrimary;
+  background: $peachPrimary;
+  color: $white;
 }
 
 ::-moz-selection {
-  background: $white;
-  color: $bluePrimary;
+  background: $peachPrimary;
+  color: $white;
 }
 
+.sg-text--info {
+  line-height: 1.3;
+  text-align: center;
+}
