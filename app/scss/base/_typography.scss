@@ -15,6 +15,10 @@ h1 {
   color: $white;
 }
 
+.text--lavender {
+  color: $lavenderPrimary;
+}
+
 .text--info {
   padding-bottom: 20px;
   text-align: center;
@@ -25,6 +29,7 @@ h1 {
   text-align: right;
 }
 
-.text--question {
+.text--question,
+.text--message {
   text-align: left;
 }

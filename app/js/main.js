@@ -5,6 +5,10 @@ const buttonsDiv = document.getElementById('js-buttons')
 const introSection = document.getElementById('js-intro')
 const quizSection = document.getElementById('js-quiz')
 const resultSection = document.getElementById('js-result')
+const overlayDiv = document.getElementById('js-overlay')
+const closeOverlayButton = document.getElementById('js-close-overlay')
+const messageIcon = document.getElementById('js-icn-message')
+const unreadIcon = document.getElementById('js-icn-unread')
 const yesButton = document.getElementById('js-button-yes')
 const noButton = document.getElementById('js-button-no')
 const prevButton = document.getElementById('js-button-prev')
@@ -32,6 +36,7 @@ let score = 0;
   buttonsDiv.style.display = 'none'
   quizSection.style.display = 'none'
   resultSection.style.display = 'none'
+  overlayDiv.style.display='none'
 
   let request = new XMLHttpRequest()
   request.open('GET', 'https://cdn.rawgit.com/kdzwinel/cd08d08002995675f10d065985257416/raw/811ad96a0567648ff858b4f14d0096ba241f28ef/quiz-data.json', true)
@@ -113,7 +118,7 @@ function checkKey (e) {
   if (i < 0) i = 3
   switch (e.keyCode) {
     case 38: // up arrow
-      radios[i].checked = true
+      radios[i].click()
       i--
       break
     case 40: // down arrow
@@ -400,3 +405,13 @@ function displayResult () {
       break
   }
 }
+
+// Overlay message
+
+messageIcon.addEventListener('click', () => {
+  overlayDiv.style.display = 'block'
+  unreadIcon.style.visibility = 'hidden'
+})
+
+
+closeOverlayButton.addEventListener('click', () => overlayDiv.style.display='none')

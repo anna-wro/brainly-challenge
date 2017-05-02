@@ -30,13 +30,13 @@
             </div>
             <div class="sg-header__right sg-hide-for-small-only">
                 <button class="sg-icon-as-button sg-icon-as-button--transparent sg-icon-as-button--light">
-                    <div class="sg-icon-as-button__hole">
+                    <div class="sg-icon-as-button__hole" id="js-icn-message">
                         <div class="sg-overlayed-box">
-                            <svg class="sg-icon sg-icon--x22 sg-icon--adaptive" id="js-icn-message">
+                            <svg class="sg-icon sg-icon--x22 sg-icon--adaptive">
                                 <use xlink:href="#icon-messages"></use>
                             </svg>
                             <div class="sg-overlayed-box__overlay">
-                                <div class="sg-badge sg-badge--rounded sg-badge--peach">
+                                <div class="sg-badge sg-badge--rounded sg-badge--peach" id="js-icn-unread">
                                     <div class="sg-text sg-text--emphasised sg-text--xsmall sg-text--light">1</div>
                                 </div>
                             </div>
@@ -76,13 +76,13 @@
     </div>
 </header>
 <section id="js-intro">
-    <div class="sg-content-box sg-content-box--full container container__intro">
+    <div class="sg-content-box sg-content-box--full container intro__container">
         <div class="heading">
             <h1 class="sg-header-primary heading__title">
                 Quiz</h1>
         </div>
         <div class="sg-text  sg-text--gray sg-text--standout text--info " id="js-info"></div>
-        <div class=" sg-content-box" id="js-buttons">
+        <div class=" sg-content-box buttons__container--intro" id="js-buttons">
             <button class="sg-button-primary sg-button-primary--alt sg-button-primary--yes" id="js-button-yes">
                 Tak!
             </button>
@@ -97,18 +97,18 @@
         <h2 class="sg-header-primary heading__title heading__title--started">
             Quiz
         </h2>
-        <div class="container__timer">
+        <div class="timer__container">
             <p class="sg-text sg-text--standout sg-text--gray-secondary text--timer" id="js-time"></p>
         </div>
     </div>
     <div class="sg-content-box container">
-        <div class="container__progress">
+        <div class="progress__container">
             <div class="progress-bar">
                 <div class="progress-bar__bar" id="js-progress-bar"></div>
             </div>
         </div>
         <p class="sg-text sg-text--gray text--question" id="js-question"></p>
-        <div class="container__radio">
+        <div class="radio__container">
             <div class="sg-label sg-label--secondary ">
                 <div class="sg-label__icon">
                     <div class="sg-radio">
@@ -150,7 +150,7 @@
                                                                      class="sg-text sg-text--regular sg-text--gray">Answer 4</span></label>
             </div>
         </div>
-        <div class="container__button">
+        <div class="buttons__container">
             <button class="sg-button-primary sg-button-primary--alt" id="js-button-prev">
                 Poprzednie
             </button>
@@ -169,10 +169,10 @@
             <h2 class="sg-header-primary heading__title heading__title--result">
                 Wyniki quizu</h2>
         </div>
-        <div class="container__results">
+        <div class="results__container">
             <p class="sg-text sg-text--gray sg-text--standout sg-text--info text--info text--result" id="js-score"></p>
         </div>
-        <div class="container__button--results">
+        <div class="results-button__container">
             <button class="sg-button-primary button--whatnow" id="js-button-again">
                 Spróbuję jeszcze raz
             </button>
@@ -194,9 +194,39 @@
         </div>
     </div>
 </footer>
-<!--build:js js/main.min.js -->
-<script src="js/vendor/icons-5459066133.js"></script>
-<script src="js/main.js"></script>
-<!-- endbuild -->
+<div class="sg-overlay" id="js-overlay">
+    <div class="sg-toplayer message">
+        <div class="sg-toplayer__header">
+            <a class="sg-toplayer__close" id="js-close-overlay">×</a>
+        </div>
+
+        <div class="sg-toplayer__wrapper">
+
+            <div class="sg-content-box message__container">
+                <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large">
+                    <div class="sg-text-bit sg-text-bit--not-responsive sg-text-bit--small text--lavender">Hello!</div>
+                </div>
+                <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large">
+                    <div class="sg-text sg-text--gray">This app's a&nbsp;recruitment challenge from <a class="sg-link sg-link--underlined sg-link--unstyled"
+                                                                                    href="https://brainly.co">Brainly</a>.
+                        I&nbsp;hope you like&nbsp;it.
+                    </div>
+                    <div class="sg-text sg-text--gray">If&nbsp;there's anything you think I&nbsp;should change in&nbsp;my&nbsp;code, please <a
+                            href="mailto://contact@anna.pm"
+                            class="sg-link sg-link--underlined sg-link--unstyled">let me&nbsp;know</a>. I'd&nbsp;love to&nbsp;improve&nbsp;it.
+
+                    </div>
+                </div>
+                <div class="message__signature">
+                <p class="sg-text sg-text--gray">Anna</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--build:js js/main.min.js -->
+    <script src="js/vendor/icons-5459066133.js"></script>
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

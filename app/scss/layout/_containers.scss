@@ -7,42 +7,58 @@
   padding: 0 20px;
 }
 
-.container__header {
-  max-width: $quizMaxWidth;
-}
-
-.container__timer {
+.timer__container {
   padding-top: 21px;
 }
 
-.container__button {
+.buttons__container {
   float: right;
   margin: 15px auto 30px;
 }
 
-.container__button--results {
-  text-align: center;
+.results-button__container {
   margin-bottom: 30px;
+  text-align: center;
 }
 
-.container__radio {
+.radio__container {
   padding-top: 10px;
   @media screen and (min-width: $breakpointMedium) {
     columns: 2;
   }
 }
 
-.container__progress {
+.progress__container {
   margin-bottom: 30px;
 }
 
-.container__intro {
+.intro__container {
   text-align: center;
 }
 
-.container__results {
+.results__container {
   margin: 0 auto;
   padding: 5% 0 10px;
 }
 
+.message {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-height: 350px;
+  max-width: 320px;
+  padding: 0 2px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
 
+.message__container {
+  text-align: center;
+}
+
+.message__signature {
+  margin-right: 10px;
+  text-align: right;
+}

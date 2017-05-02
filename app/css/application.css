@@ -13,6 +13,9 @@ h1 {
   background: #7a8adb;
   color: #ffffff; }
 
+.text--lavender {
+  color: #7a8adb; }
+
 .text--info {
   padding-bottom: 20px;
   text-align: center; }
@@ -21,7 +24,8 @@ h1 {
   font-size: 1.5rem;
   text-align: right; }
 
-.text--question {
+.text--question,
+.text--message {
   text-align: left; }
 
 * {
@@ -49,37 +53,53 @@ img {
   max-width: 700px;
   padding: 0 20px; }
 
-.container__header {
-  max-width: 700px; }
-
-.container__timer {
+.timer__container {
   padding-top: 21px; }
 
-.container__button {
+.buttons__container {
   float: right;
   margin: 15px auto 30px; }
 
-.container__button--results {
-  text-align: center;
-  margin-bottom: 30px; }
+.results-button__container {
+  margin-bottom: 30px;
+  text-align: center; }
 
-.container__radio {
+.radio__container {
   padding-top: 10px; }
   @media screen and (min-width: 768px) {
-    .container__radio {
+    .radio__container {
       -webkit-columns: 2;
          -moz-columns: 2;
               columns: 2; } }
 
-.container__progress {
+.progress__container {
   margin-bottom: 30px; }
 
-.container__intro {
+.intro__container {
   text-align: center; }
 
-.container__results {
+.results__container {
   margin: 0 auto;
   padding: 5% 0 10px; }
+
+.message {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-height: 350px;
+  max-width: 320px;
+  padding: 0 2px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%; }
+
+.message__container {
+  text-align: center; }
+
+.message__signature {
+  margin-right: 10px;
+  text-align: right; }
 
 .text--challenge {
   text-transform: uppercase; }
@@ -161,6 +181,9 @@ img {
 
 .container__button {
   padding-bottom: 55px; }
+
+.buttons__container--intro {
+  padding-bottom: 80px; }
 
 .is-ending {
   -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
