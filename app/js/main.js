@@ -1,5 +1,6 @@
 const infoP = document.getElementById('js-info')
 const scoreP = document.getElementById('js-score')
+const timeP = document.getElementById('js-time')
 const buttonsDiv = document.getElementById('js-buttons')
 const introSection = document.getElementById('js-intro')
 const quizSection = document.getElementById('js-quiz')
@@ -83,8 +84,27 @@ To jak, zaczynamy?`
     finButton.addEventListener('click', () => finishQuiz())
   }
 
+  function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(function () {
+      minutes = parseInt(timer / 60, 10);
+      seconds = parseInt(timer % 60, 10);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = minutes + ":" + seconds;
+
+      if (--timer < 0) {
+        finishQuiz()
+        timer = duration;
+      }
+    }, 1000);
+  }
+
   function startQuiz () {
     introSection.style.display = 'none'
+    startTimer(data['time_seconds'], timeP);
     loadQuestion()
   }
 
@@ -144,6 +164,7 @@ To jak, zaczynamy?`
   }
 
   function finishQuiz () {
+    saveAnswer()
     quizSection.style.display = 'none'
     compareAnswers()
     displayResult()
@@ -161,6 +182,25 @@ To jak, zaczynamy?`
 
   function displayResult () {
     resultSection.style.display = 'block'
-    scoreP.textContent = `Masz ${score} punktów!`
+    switch (score) {
+      case  9:
+        scoreP.textContent = `Odpowiedziałeś/-aś dobrze na wszystkie pytania!`;
+        break;
+      case 8:
+      case 7:
+      case 6:
+      case 5:
+        scoreP.textContent = `Świetnie Ci poszło, masz aż ${score} punktów!`;
+        break;
+      case 4:
+      case 3:
+      case 2:
+        scoreP.textContent = `Zdobyłeś/-aś ${score} punkty`
+      case 1:
+        scoreP.textContent = `Udało Ci się dobrze odpowiedzieć na jedno pytanie`;
+      case 0:
+        scoreP.textContent = `Niestety nie zdobyłeś/-aś żadnego punktu`
+    }
+
   }
 })()
