@@ -49,6 +49,8 @@ let score = 0;
   request.onerror = () => infoDiv.textContent = 'Coś poszło nie tak'
   request.send()
 
+  document.onkeydown = checkKey // Navigating with arrows
+
 })()
 
 function prepareQuiz () {
@@ -99,9 +101,39 @@ compareButton.addEventListener('click', () => {
   startQuiz()
 })
 
+function checkKey (e) {
+  e = e || window.event
+
+  let i = 0
+  if (i >= 3) i = 0
+  if (i < 0) i = 3
+  switch (e.keyCode) {
+    case 38: // up arrow
+      radios[i].checked = true
+      i--
+      break
+    case 40: // down arrow
+      radios[i].click()
+      i++
+      break
+    case 37: // left arrow
+      if (index > 0)
+        prevButton.click()
+      break
+    case 39: // right arrow
+      if (index < 8)
+        nextButton.click()
+      // FIXME: radio buttons are still selected
+      // after loading new question this way
+      for (let j = 0; j < radios.length; j++) {
+        radios[j].checked = false
+      }
+      break
+  }
+}
+
 function startTimer (duration, display) {
   timeP.classList.remove('is-ending')
-
   let timer = duration, minutes, seconds
   setInterval(function () {
     minutes = parseInt(timer / 60, 10)
@@ -118,6 +150,11 @@ function startTimer (duration, display) {
       finishQuiz()
       timer = duration
     }
+
+    if (alreadyFinished) {
+      timer = duration
+      alreadyFinished = false
+    }
   }, 1000)
 }
 
@@ -131,7 +168,6 @@ function startQuiz () {
     score = 0
   }
   index = 0
-  alreadyFinished = false
   introSection.style.display = 'none'
   resultSection.style.display = 'none'
   quizSection.style.display = 'block'
@@ -173,11 +209,11 @@ function checkForAnswer () {
     case 3:
       radio4.checked = true
       break
-    default:
-      for (let i = 0; i < radios.length; i++) {   // if not, all radios are unchecked
+    default:      // if not, all radios are unchecked
+      for (let i = 0; i < radios.length; i++) {
         radios[i].checked = false
+      }
   }
-}
 }
 
 function loadQuestion () {
@@ -196,7 +232,6 @@ function loadQuestion () {
   // Showing progress on the quiz
   let percentsLeft = ((index + 1) / counter) * 100
   progressBarDiv.style.width = percentsLeft + '%'
-
 
   let answer_1_obj = questions[index].answers[0]
   let answer_2_obj = questions[index].answers[1]
@@ -273,20 +308,20 @@ function loadQuestion () {
   }
 }
 
-function removeStyleFromPreviousQuestion(){
+function removeStyleFromPreviousQuestion () {
   answer1.className = 'sg-text sg-text--regular sg-text--gray'
   answer2.className = 'sg-text sg-text--regular sg-text--gray'
   answer3.className = 'sg-text sg-text--regular sg-text--gray'
   answer4.className = 'sg-text sg-text--regular sg-text--gray'
 }
 
-function setRadios() {
+function setRadios () {
   // Disable or enable selecting radio buttons depending of user's activity
   // (doing the quiz or just checking the answers)
-  radio1.disabled = !!wantsCorrect;
-  radio2.disabled = !!wantsCorrect;
-  radio3.disabled = !!wantsCorrect;
-  radio4.disabled = !!wantsCorrect;
+  radio1.disabled = !!wantsCorrect
+  radio2.disabled = !!wantsCorrect
+  radio3.disabled = !!wantsCorrect
+  radio4.disabled = !!wantsCorrect
 }
 
 function finishQuiz () {
