@@ -13,9 +13,16 @@ h1 {
   background: #7a8adb;
   color: #ffffff; }
 
-.sg-text--info {
-  line-height: 1.3;
+.text--info {
+  padding-bottom: 20px;
   text-align: center; }
+
+.text--timer {
+  font-size: 1.5rem;
+  text-align: right; }
+
+.text--question {
+  text-align: left; }
 
 * {
   box-sizing: border-box; }
@@ -35,7 +42,6 @@ p {
   margin-top: 0; }
 
 img {
-  max-height: 200px;
   max-width: 100%; }
 
 .container {
@@ -71,16 +77,52 @@ img {
 .container__results {
   padding: 5% 0 10px; }
 
-.text--info {
-  padding-bottom: 20px;
+.text--challenge {
+  text-transform: uppercase; }
+
+.heading {
+  margin: 50px auto; }
+  @media screen and (min-width: 768px) {
+    .heading {
+      margin: 8% auto 5%; } }
+
+.heading--started {
+  -webkit-columns: 2;
+     -moz-columns: 2;
+          columns: 2;
+  margin: 3% auto 20px; }
+
+.heading--result {
+  margin-bottom: 5px;
+  margin-top: 50px; }
+
+.heading__title {
+  color: #7a8adb; }
+  .heading__title--started {
+    text-align: left; }
+
+.heading__title--result {
   text-align: center; }
 
-.text--timer {
-  font-size: 1.5rem;
-  text-align: right; }
+.footer {
+  bottom: 0;
+  height: 66px;
+  left: 0;
+  position: fixed;
+  width: 100%; }
 
-.text--question {
-  text-align: left; }
+.text--footer {
+  text-align: center; }
+
+.sg-button-primary {
+  margin: 20px 10px; }
+
+.button-primary--results {
+  background: #ff796b; }
+
+.button--whatnow {
+  display: block;
+  margin: 20px auto; }
 
 .progress-bar {
   background-color: #e1e8ed;
@@ -93,43 +135,6 @@ img {
   height: 20px;
   transition: .6s ease-in-out width;
   width: 1%; }
-
-.text--challenge {
-  text-transform: uppercase; }
-
-.heading {
-  margin: 50px auto; }
-  @media screen and (min-width: 768px) {
-    .heading {
-      margin: 8% auto 5%; } }
-
-.heading__title {
-  color: #7a8adb; }
-  .heading__title--started {
-    text-align: left; }
-
-.heading--started {
-  -webkit-columns: 2;
-     -moz-columns: 2;
-          columns: 2;
-  margin: 3% auto 20px; }
-
-.heading--result {
-  margin-bottom: 5px;
-  margin-top: 50px; }
-
-.heading__title--result {
-  text-align: center; }
-
-.sg-button-primary {
-  margin: 20px 10px; }
-
-.button-primary--results {
-  background: #ff796b; }
-
-.button--whatnow {
-  margin: 20px auto;
-  display: block; }
 
 .sg-label {
   padding: 5px; }
@@ -146,8 +151,12 @@ img {
     cursor: pointer;
     text-decoration: underline; }
 
-.text--info, .text--result {
+.text--info,
+.text--result {
   white-space: pre-line; }
+
+.container__button {
+  padding-bottom: 55px; }
 
 .is-ending {
   -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;

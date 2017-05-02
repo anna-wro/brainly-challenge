@@ -308,7 +308,6 @@ function loadQuestion () {
           break
       }
     }
-
   }
 }
 
@@ -373,7 +372,7 @@ function displayResult () {
     case 3:
     case 2:
       scoreP.textContent = `Zdobyłeś/-aś ${score} punkty. Brawo!
-      
+     
       „Najpewniejszą drogą do sukcesu 
       jest próbowanie po prostu jeden, następny raz”
       ...co Ty na to?
@@ -398,8 +397,6 @@ function displayResult () {
       `
       againButton.textContent = 'Tym razem pójdzie mi lepiej!'
       compareButton.textContent = 'Jakie są odpowiedzi?'
-
       break
   }
-
 }

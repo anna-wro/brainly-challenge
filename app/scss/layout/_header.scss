@@ -13,13 +13,6 @@
   }
 }
 
-.heading__title {
-  color: $lavenderPrimary;
-  &--started {
-    text-align: left;
-  }
-}
-
 .heading--started {
   columns: 2;
   margin: 3% auto 20px;
@@ -30,6 +23,16 @@
   margin-top: 50px;
 }
 
+.heading__title {
+  color: $lavenderPrimary;
+
+  &--started {
+    text-align: left;
+  }
+}
+
 .heading__title--result {
   text-align: center;
 }
+
+

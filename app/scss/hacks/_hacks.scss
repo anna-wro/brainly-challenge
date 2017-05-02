@@ -1,6 +1,13 @@
 @import '../helpers/index';
 
-// Line breaks in the info message
-.text--info, .text--result {
+// Line breaks in template strings
+.text--info,
+.text--result {
   white-space: pre-line;
+}
+
+// Stop sticky footer
+// from covering bottom of the page
+.container__button {
+  padding-bottom: 55px;
 }

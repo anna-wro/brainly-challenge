@@ -11,11 +11,11 @@
   cursor: pointer;
 }
 
-
 .sg-label__text {
   margin-left: 5px;
+
   &:hover span {
-    cursor:pointer;
+    cursor: pointer;
     text-decoration: underline;
   }
 }

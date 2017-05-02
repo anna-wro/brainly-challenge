@@ -1,2 +1,14 @@
 // Footer
 @import '../helpers/index';
+
+.footer {
+  bottom: 0;
+  height: 66px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.text--footer {
+  text-align: center;
+}

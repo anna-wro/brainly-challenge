@@ -15,7 +15,16 @@ h1 {
   color: $white;
 }
 
-.sg-text--info {
-  line-height: 1.3;
+.text--info {
+  padding-bottom: 20px;
   text-align: center;
+}
+
+.text--timer {
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.text--question {
+  text-align: left;
 }
