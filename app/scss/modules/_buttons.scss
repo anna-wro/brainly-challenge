@@ -2,7 +2,11 @@
 @import '../helpers/index';
 
 .sg-button-primary {
-  margin: 20px 10px;
+  margin: 8px;
+
+  @media screen and (min-width: $breakpointMedium) {
+    margin: 20px 10px;
+  }
 }
 
 .button-primary--results {
@@ -11,6 +15,8 @@
 
 .button--whatnow {
   display: block;
-
+  height: auto;
   margin: 20px auto;
+  padding: 8px 12px;
 }
+

@@ -16,11 +16,7 @@
   padding-bottom: 80px;
 }
 
-// Button with line breaks
-@media screen and(max-width: $breakpointMedium) {
-  .button--whatnow {
-    height: auto;
-    padding: 10px 8px;
-    white-space: normal;
-  }
+// Button with line breaks if it doesn't fit on the screen
+.button--whatnow {
+  white-space: normal;
 }
