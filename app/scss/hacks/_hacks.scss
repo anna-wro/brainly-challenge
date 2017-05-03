@@ -12,6 +12,15 @@
   padding-bottom: 60px;
 }
 
-.buttons__container--intro {
+.buttons__container--intro, .results-button__container {
   padding-bottom: 80px;
+}
+
+// Button with line breaks
+@media screen and(max-width: $breakpointMedium) {
+  .button--whatnow {
+    height: auto;
+    padding: 10px 8px;
+    white-space: normal;
+  }
 }

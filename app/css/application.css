@@ -182,8 +182,14 @@ img {
 .buttons__container {
   padding-bottom: 60px; }
 
-.buttons__container--intro {
+.buttons__container--intro, .results-button__container {
   padding-bottom: 80px; }
+
+@media screen and (max-width: 768px) {
+  .button--whatnow {
+    height: auto;
+    padding: 10px 8px;
+    white-space: normal; } }
 
 .is-ending {
   -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
