@@ -1,8 +1,8 @@
 # Brainly Internship Challenge
 
-![Quiz](https://github.com/anna-wro/brainly-challenge/blob/master/screenshots/quiz.png)
+You can see it on [GitHubPages](https://anna-wro.github.io/brainly-challenge/app/).
 
-Recruitment challenge from [Brainly](https://brainly.co/)
+![Quiz](https://github.com/anna-wro/brainly-challenge/blob/master/screenshots/quiz.png)
 
 ### Technical requirements
 * Vanilla JavaScript ES2015+
