@@ -413,5 +413,4 @@ messageIcon.addEventListener('click', () => {
   unreadIcon.style.visibility = 'hidden'
 })
 
-
 closeOverlayButton.addEventListener('click', () => overlayDiv.style.display='none')

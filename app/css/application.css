@@ -179,8 +179,8 @@ img {
 .text--result {
   white-space: pre-line; }
 
-.container__button {
-  padding-bottom: 55px; }
+.buttons__container {
+  padding-bottom: 60px; }
 
 .buttons__container--intro {
   padding-bottom: 80px; }
